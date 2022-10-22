@@ -9,6 +9,6 @@ public class MentalHealth extends Report{
 
 	@Override
 	public String toString() {
-		return "Mental Health score: " + mentalHealth + "Description of Mental Health: " + mentalHealthDescription;
+		return "Mental Health score: " + scale + "Description of Mental Health: " + description;
 	}
 }
