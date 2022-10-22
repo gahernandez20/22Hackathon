@@ -16,7 +16,7 @@ public class ReportGUI {
     PersonHandler personHandler = new PersonHandler();
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
-    Label lbl1, lbl2, lbl3, lbl4, lbl5;
+    Label lbl1, lbl2, lbl3, lbl4, lbl5, lblPainScale, lblPainScale1, lblPainScale2, lblPainScale3;
     CheckboxGroup painType;
     Checkbox typePain1, typePain2, typePain3; 
     Button submitButton;
@@ -34,6 +34,11 @@ public class ReportGUI {
         lbl3 = new Label("Pain level:");
         lbl4 = new Label("Type of Report:");
         lbl5 = new Label("Description of Report:");
+        lblPainScale = new Label("Pain Scale: ");
+        lblPainScale1 = new Label("1 - Pain is barely noticable");
+        lblPainScale2 = new Label("5 - Pain is very distracting and stops me from participating in normal activities");
+        lblPainScale3 = new Label("10 - Pain is severe enough where I cannot move");
+        
         painType = new CheckboxGroup();
         typePain1 = new Checkbox("Pain", false, painType);
         typePain2 = new Checkbox("Drowiness", false, painType);
@@ -99,6 +104,9 @@ public class ReportGUI {
         typePain2.setBounds(240, 145, 100, 30);
         typePain3.setBounds(345, 145, 190, 30);
         lbl5.setBounds(20, 180, 150, 30);
+        lblPainScale.setBounds(350, 40, 200, 30);
+        lblPainScale1.setBounds(350, 75, 200, 30);
+        lblPainScale3.setBounds(350, 105, 400, 30);
         submitButton.setBounds(225, 365, 120, 30);
         txaMessage.setBounds(20, 215, 500, 150);
 
@@ -118,6 +126,9 @@ public class ReportGUI {
         frame.add(typePain2);
         frame.add(typePain3);
         frame.add(lbl5);
+        frame.add(lblPainScale);
+        frame.add(lblPainScale1);
+        frame.add(lblPainScale3);
         frame.add(txaMessage);
         frame.add(submitButton);
 
