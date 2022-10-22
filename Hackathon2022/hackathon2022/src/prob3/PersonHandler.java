@@ -26,18 +26,25 @@ public class PersonHandler{
     }
 
     private File writeReportRecord(int ID){
-        Person p = getPerson(ID);
+        Person p = pMap.get(ID);
         ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
+        File outFile = new File(fileName);
 		try{
-			PrintWriter writer = new PrintWriter(new File(fileName));
-			for(int i = 0; i < reps.length; i++){
-                
+			PrintWriter writer = new PrintWriter(outFile);
+            writer.print("Name\tAge\tID\nReports:\n");
+			for(int i = 0; i < reports.size(); i++){
+                writer.print(reports.get(i) + "\n");
             }
-		}
-		catch (IOException ioe) {
+
+            writer.close();
+		
+
+        }catch (IOException ioe) {
 			System.out.println("Problem creating file or writing");
+
 		}
+        return outFile;
 	}
 
     
