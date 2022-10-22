@@ -41,6 +41,13 @@ public class Person {
         return ID;
     }
 
+	public void addRep(Report rep){
+		reps.add(rep);
+	}
+
+	public Report getReport(){
+		
+	}
 
 	public static void main(String[] args){
 		Person p1 = new Person("steve", 33);
