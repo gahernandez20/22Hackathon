@@ -7,13 +7,24 @@ public class PersonHandler{
 
     public PersonHandler(){}
 
-    public void addPerson(Person p){
-        pMap.put(p.getID(),p);
+    public void addPerson(Person p) {
+        Set<Integer> keys = pMap.keySet();
+        for( Integer key : keys ) {
+            if( p.getID() == key ) {
+                continue;
+            }
+            else {
+                pMap.put(p.getID(),p);
+            }
+        }
+    }
+
+    public Person getPerson( int id ) {
+        return pMap.get(id);
     }
 
     public ArrayList<Report> getReports(int ID){
         Person p = pMap.get(ID);
-        ArrayList<Report> retList = new ArrayList<Report>(p.getAllReports());
-        return retList;
+        return p.getAllReports();
     }
 }
