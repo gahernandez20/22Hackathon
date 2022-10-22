@@ -1,26 +1,14 @@
 package prob3;
 
-public class MentalHealth {
-	private int mentalHealth;
-	private String mentalHealthDescription;
-	
-	public MentalHealth (int mentalHealth, String mentalHealthDescription) {
-		this.mentalHealth = mentalHealth;
-		this.mentalHealthDescription = mentalHealthDescription;
-	}
-	public MentalHealth (int mentalHealth) {
-		this(mentalHealth, "");
-	}
-	
-	public int getMentalHealth() {
-		return mentalHealth;
-	}
-	
-	public String getMentalHealthDescription() {
-		return mentalHealthDescription;
-	}
+public class mentalHealth extends Report{
+
+
+	public mentalHealth (int scale, String description){
+		super(scale, description);
+}
+
 	@Override
 	public String toString() {
-		return "Mental Health score: " + mentalHealth + "Description of Mental Health: " + mentalHealthDescription;
+		return "Mental Health score: " + scale + "Description of Mental Health: " + description;
 	}
 }

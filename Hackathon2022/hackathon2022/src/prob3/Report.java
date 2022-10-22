@@ -1,27 +1,29 @@
 package prob3;
 
 public abstract class Report {
-	protected Pain pain;
-	protected Drowsiness drowsiness;
-	protected MentalHealth mentalHealth;
+	protected int scale;
+	protected String description;
 	
-	public Report(Drowsiness drowsiness) {
-		
-		this.drowsiness = drowsiness;
-		
+	public Report (int scale, String description) {
+		this.scale = scale;
+		this.description = description;
 	}
-	public Report(Pain pain) {
-		this.pain = pain;
+	public void setScale (int scale) {
+		this.scale = scale;
 	}
-	public Report(MentalHealth mentalHealth) {
-		this.mentalHealth = mentalHealth;
-			
-		}
-	public Object getReport(Object o) {
-		return o;
+	
+	public int getScale() {
+		return scale;
 	}
-	// @Override
-	// public String toString(){
-	// 	// return getReport();
-	// }
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String toString() {
+		return "Intensity of problem(1-10)" + scale + "Description of problem:" + description;
+	}
 }
+
