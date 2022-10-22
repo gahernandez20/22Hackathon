@@ -1,6 +1,6 @@
 package prob3;
 
-public class mentalHealth extends Report{
+public class MentalHealth extends Report{
 
 
 	public mentalHealth (int scale, String description){
