@@ -11,8 +11,6 @@ public class PersonHandler{
         pMap.put(p.getID(),p);
     }
 
-
-
     public ArrayList<Report> getReports(int ID){
         Person p = pMap.get(ID);
         ArrayList retList = new ArrayList<Report>(p.getAllReports());
