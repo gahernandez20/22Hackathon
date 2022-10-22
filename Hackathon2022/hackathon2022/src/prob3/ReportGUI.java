@@ -84,6 +84,7 @@ public class ReportGUI {
                 
                 patient.addRep(report);
                 personHandler.addPerson(patient);
+                personHandler.writeReportRecord( patient.getID() );
                 clearText();
             }
         } );

@@ -32,7 +32,7 @@ public class PersonHandler{
         return p.getAllReports();
     }
 
-    private void writeReportRecord(int ID){
+    protected void writeReportRecord(int ID){
         Person p = pMap.get(ID);
         ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
