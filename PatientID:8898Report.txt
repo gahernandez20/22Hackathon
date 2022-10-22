@@ -1,0 +1,2 @@
+ReportType	Scale
+Mental Health	5
