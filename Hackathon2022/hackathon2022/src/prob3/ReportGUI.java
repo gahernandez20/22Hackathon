@@ -68,7 +68,7 @@ public class ReportGUI {
     private void addButtonListener() {
         submitButton.addActionListener( new ActionListener() {
             public void actionPerformed( ActionEvent ae ) {
-                Report report = null;
+                Report report;
                 Person patient = new Person(tf1.getText(), Integer.parseInt(tf2.getText()));
                 
                 if( painType.getSelectedCheckbox().getLabel().equals("Pain")) {
@@ -134,6 +134,7 @@ public class ReportGUI {
 
     }
 
+    //Method that clears text from all text reports
     private void clearText() {
         tf1.setText("");
         tf2.setText("");
