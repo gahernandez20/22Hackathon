@@ -1,5 +1,0 @@
-Name	Age	ID
-Reports:
-null	0	3270
-Reports:
-null

@@ -38,7 +38,6 @@ public class ReportGUI {
         lblPainScale1 = new Label("1 - Pain is barely noticable");
         lblPainScale2 = new Label("5 - Pain is very distracting and stops me from participating in normal activities");
         lblPainScale3 = new Label("10 - Pain is severe enough where I cannot move");
-        
         painType = new CheckboxGroup();
         typePain1 = new Checkbox("Pain", false, painType);
         typePain2 = new Checkbox("Drowiness", false, painType);
@@ -78,7 +77,7 @@ public class ReportGUI {
                 else if ( painType.getSelectedCheckbox().getLabel().equals("Drowsiness")) {
                     report = new Drowsiness(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
-                else if ( painType.getSelectedCheckbox().getLabel().equals("Mental Health Condition") ) {
+                else {
                     report = new MentalHealth(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
                 

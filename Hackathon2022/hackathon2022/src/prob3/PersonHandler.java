@@ -33,18 +33,22 @@ public class PersonHandler{
 		try{
 			PrintWriter writer = new PrintWriter(outFile);
             writer.print("ReportType\tScale\n");
-			for(int i = 0; i < reports.size(); i++){
-                Report r = reports.get(i);
-                if(r instanceof Pain){
+			for( Report r : reports ) {
+                if(r instanceof Pain) {
+                    Pain painReport = (Pain)r;
                     writer.print("Pain\t");
+                    writer.print(painReport.getScale() + "\n");  
                 }
-                else if(r instanceof Drowsiness){
+                else if(r instanceof Drowsiness) {
+                    Drowsiness drowsinessReport = (Drowsiness)r;
                     writer.print("Drowsiness\t");
+                    writer.print(drowsinessReport.getScale() + "\n"); 
                 }
-                else if(r instanceof mentalHealth){
+                else {
+                    MentalHealth mentalHealthReport = (MentalHealth)r;
                     writer.print("Mental Health\t");
-                }
-                writer.print(r.getScale() + "\n");                
+                    writer.print(mentalHealthReport.getScale() + "\n"); 
+                }          
             }
             writer.close();
 
