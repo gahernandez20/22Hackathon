@@ -10,7 +10,7 @@ public class Drowsiness extends Report{
 	
 	@Override
 	public String toString() {
-		return "Drowsiness score: " + drowsiness + "Description of Drowsiness: " + drowsinessDescription;
+		return "Drowsiness score: " + scale + "Description of Drowsiness: " + description;
 	}
 }
 	
