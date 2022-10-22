@@ -24,6 +24,7 @@ public class ReportGUI {
 
     public ReportGUI () {
         
+        //Initialize GUI variables
         frame = new Frame("Report Program");
         tf1 = new TextField(20);
         tf2 = new TextField(20);
@@ -33,25 +34,27 @@ public class ReportGUI {
         lbl3 = new Label("Pain level:");
         lbl4 = new Label("Type of Report:");
         lbl5 = new Label("Description of Report:");
-
         painType = new CheckboxGroup();
         typePain1 = new Checkbox("Pain", false, painType);
         typePain2 = new Checkbox("Drowiness", false, painType);
         typePain3 = new Checkbox("Mental Health Condition", false, painType);
         submitButton = new Button("Submit Report");
         txaMessage = new TextArea();
-        frame.setLayout( null );
 
+        //Create elements of GUI
+        frame.setLayout( null );
         addButtonListener();
         createPositionsForComponents();
         addComponentsToGUI();
         
+        //Ensures window opened is closed when red X is pressed
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent we) {
                 System.exit(0);
             } 
         } );
         
+        //Displays GUI
         frame.setSize(600, 400);
         frame.setVisible(true);
     }
@@ -63,7 +66,7 @@ public class ReportGUI {
             public void actionPerformed( ActionEvent ae ) {
                 Report report = null;
                 Person patient = new Person(tf1.getText(), Integer.parseInt(tf2.getText()));
-                /* 
+                
                 if( painType.getSelectedCheckbox().getLabel().equals("Pain")) {
                     report = new Pain(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 } 
@@ -73,7 +76,7 @@ public class ReportGUI {
                 else if ( painType.getSelectedCheckbox().getLabel().equals("Mental Health Condition") ) {
                     report = new MentalHealth(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
-                */
+                
                 patient.addRep(report);
                 personHandler.addPerson(patient);
                 clearText();

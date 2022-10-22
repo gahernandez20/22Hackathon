@@ -3,7 +3,7 @@ package prob3;
 public class MentalHealth extends Report{
 
 
-	public mentalHealth (int scale, String description){
+	public MentalHealth (int scale, String description){
 		super(scale, description);
 	}
 
