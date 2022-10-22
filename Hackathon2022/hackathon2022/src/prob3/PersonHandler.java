@@ -15,10 +15,6 @@ public class PersonHandler{
     public void addPerson(Person p){
         pMap.put(p.getName(),p);
     }
-    public Person getPerson(int ID){
-        Person p = pMap.get(p.getID());
-        return p;
-    }
 
     private File writeReportRecord(int ID){
         Person p = getPerson(ID);
