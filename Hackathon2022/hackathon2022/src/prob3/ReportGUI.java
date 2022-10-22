@@ -12,6 +12,7 @@ import java.awt.TextArea;
 
 public class ReportGUI {
     
+    //Declare GUI component variables
     PersonHandler personHandler = new PersonHandler();
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
@@ -75,6 +76,7 @@ public class ReportGUI {
                 */
                 patient.addRep(report);
                 personHandler.addPerson(patient);
+                clearText();
             }
         } );
 
@@ -116,6 +118,14 @@ public class ReportGUI {
         frame.add(txaMessage);
         frame.add(submitButton);
 
+    }
+
+    private void clearText() {
+        tf1.setText("");
+        tf2.setText("");
+        tf3.setText("");
+        tf4.setText("");
+        txaMessage.setText("");
     }
 
     public static void main ( String[] args ) {
