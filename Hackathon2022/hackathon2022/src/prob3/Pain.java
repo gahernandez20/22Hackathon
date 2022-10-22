@@ -9,7 +9,7 @@ public class Pain extends Report{
 
 	@Override
 	public String toString() {
-		return "Pain score: " + pain + "Description of Pain: " + painDescription;
+		return "Pain score: " + scale + "Description of Pain: " + description;
 	}
 }
 
