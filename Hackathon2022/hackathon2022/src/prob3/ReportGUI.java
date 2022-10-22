@@ -4,7 +4,6 @@ import java.awt.event.*;
 import java.awt.TextField; 
 import java.awt.Frame;
 import java.awt.Label;
-import java.awt.GridLayout;
 import java.awt.Button;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
@@ -13,7 +12,7 @@ import java.awt.TextArea;
 
 public class ReportGUI {
     
-
+    PersonHandler personHandler;
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
     Label lbl1, lbl2, lbl3, lbl4, lbl5;
@@ -21,7 +20,6 @@ public class ReportGUI {
     Checkbox typePain1, typePain2, typePain3; 
     Button submitButton;
     Frame frame;
-    GridLayout fLayout;
 
     public ReportGUI () {
         frame = new Frame("Report Program");
