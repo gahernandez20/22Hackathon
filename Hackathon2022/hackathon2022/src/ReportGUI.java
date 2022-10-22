@@ -8,7 +8,7 @@ import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.TextArea;
 
-public class ReportGUI implements ActionListener {
+public class ReportGUI {
     
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
@@ -38,7 +38,12 @@ public class ReportGUI implements ActionListener {
         submitButton = new Button("Submit Report");
 
         txaMessage = new TextArea();
-        fLayout = new GridLayout( 4,2 );
+
+        submitButton.addActionListener( new ActionListener() {
+            public void actionPerformed( ActionEvent ae ) {
+                
+            }
+        } );
         frame.setLayout( null );
         
         lbl1.setBounds(20, 40, 40, 30);
@@ -78,11 +83,6 @@ public class ReportGUI implements ActionListener {
         
         frame.setSize(600, 400);
         frame.setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed( ActionEvent ae ) {
-        
     }
 
     public static void main ( String[] args ) {
