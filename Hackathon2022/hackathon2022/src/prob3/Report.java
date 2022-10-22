@@ -20,8 +20,8 @@ public abstract class Report {
 	public Object getReport(Object o) {
 		return o;
 	}
-	@Override
-	public String toString(){
-		return getReport();
-	}
+	// @Override
+	// public String toString(){
+	// 	// return getReport();
+	// }
 }
