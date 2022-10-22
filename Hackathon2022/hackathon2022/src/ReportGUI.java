@@ -25,7 +25,6 @@ public class ReportGUI implements ActionListener {
         tf1 = new TextField(20);
         tf2 = new TextField(20);
         tf3 = new TextField();
-        //tf4 = new TextField();
         lbl1 = new Label("Name:");
         lbl2 = new Label("Age:");
         lbl3 = new Label("Pain level:");
@@ -42,7 +41,6 @@ public class ReportGUI implements ActionListener {
         fLayout = new GridLayout( 4,2 );
         frame.setLayout( null );
         
-       
         lbl1.setBounds(20, 40, 40, 30);
         tf1.setBounds(175, 40, 150, 30);
         lbl2.setBounds(20, 75, 40, 30);
@@ -50,7 +48,9 @@ public class ReportGUI implements ActionListener {
         lbl3.setBounds(20, 110, 100, 30);
         tf3.setBounds(175, 110, 150, 30);
         lbl4.setBounds(20, 145, 120, 30);
-        tf4.setBounds(175, 145, 150, 30);
+        typePain1.setBounds(175, 145, 60, 30);
+        typePain2.setBounds(240, 145, 100, 30);
+        typePain3.setBounds(345, 145, 190, 30);
         lbl5.setBounds(20, 180, 150, 30);
         submitButton.setBounds(225, 365, 120, 30);
 
@@ -63,7 +63,9 @@ public class ReportGUI implements ActionListener {
         frame.add(lbl3);
         frame.add(tf3);
         frame.add(lbl4);
-        frame.add(tf4);
+        frame.add(typePain1);
+        frame.add(typePain2);
+        frame.add(typePain3);
         frame.add(lbl5);
         frame.add(txaMessage);
         frame.add(submitButton);
@@ -80,7 +82,7 @@ public class ReportGUI implements ActionListener {
 
     @Override
     public void actionPerformed( ActionEvent ae ) {
-
+        
     }
 
     public static void main ( String[] args ) {
