@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Hackathon2022/hackathon2022/src"/>
+	<classpathentry kind="output" path="Hackathon2022/hackathon2022/bin"/>
+</classpath>
