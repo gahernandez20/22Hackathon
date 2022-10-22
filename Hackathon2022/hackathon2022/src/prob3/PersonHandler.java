@@ -22,6 +22,7 @@ public class PersonHandler{
 
     private File writeReportRecord(int ID){
         Person p = getPerson(ID);
+        ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
 		try{
 			PrintWriter writer = new PrintWriter(new File(fileName));
