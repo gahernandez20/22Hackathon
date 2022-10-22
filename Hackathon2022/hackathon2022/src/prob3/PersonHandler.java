@@ -11,15 +11,7 @@ public class PersonHandler{
     public PersonHandler(){}
 
     public void addPerson(Person p) {
-        Set<Integer> keys = pMap.keySet();
-        for( Integer key : keys ) {
-            if( p.getID() == key ) {
-                continue;
-            }
-            else {
-                pMap.put(p.getID(),p);
-            }
-        }
+        pMap.put(p.getID(),p);
     }
 
     public Person getPerson( int id ) {
@@ -32,26 +24,31 @@ public class PersonHandler{
         return p.getAllReports();
     }
 
-    protected void writeReportRecord(int ID){
-        Person p = pMap.get(ID);
+    protected void writeReportRecord( Person p){
+        //Person p = pMap.get(ID);
+        int ID = p.getID();
         ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
         File outFile = new File(fileName);
 		try{
 			PrintWriter writer = new PrintWriter(outFile);
             writer.print("ReportType\tScale\n");
-			for(int i = 0; i < reports.size(); i++){
-                Report r = reports.get(i);
-                if(r instanceof Pain){
+			for( Report r : reports ) {
+                if(r instanceof Pain) {
+                    Pain painReport = (Pain)r;
                     writer.print("Pain\t");
+                    writer.print(painReport.getScale() + "\n");  
                 }
-                else if(r instanceof Drowsiness){
+                else if(r instanceof Drowsiness) {
+                    Drowsiness drowsinessReport = (Drowsiness)r;
                     writer.print("Drowsiness\t");
+                    writer.print(drowsinessReport.getScale() + "\n"); 
                 }
-                else if(r instanceof mentalHealth){
+                else {
+                    MentalHealth mentalHealthReport = (MentalHealth)r;
                     writer.print("Mental Health\t");
-                }
-                writer.print(r.getScale() + "\n");                
+                    writer.print(mentalHealthReport.getScale() + "\n"); 
+                }          
             }
             writer.close();
 

@@ -31,14 +31,13 @@ public class ReportGUI {
         tf3 = new TextField();
         lbl1 = new Label("Name:");
         lbl2 = new Label("Age:");
-        lbl3 = new Label("Pain level:");
+        lbl3 = new Label("Pain level: (1-10)");
         lbl4 = new Label("Type of Report:");
-        lbl5 = new Label("Description of Report:");
+        lbl5 = new Label("Description of Report: (EX. I feel constant pain on my hip.)");
         lblPainScale = new Label("Pain Scale: ");
         lblPainScale1 = new Label("1 - Pain is barely noticable");
         lblPainScale2 = new Label("5 - Pain is very distracting and stops me from participating in normal activities");
         lblPainScale3 = new Label("10 - Pain is severe enough where I cannot move");
-        
         painType = new CheckboxGroup();
         typePain1 = new Checkbox("Pain", false, painType);
         typePain2 = new Checkbox("Drowiness", false, painType);
@@ -78,13 +77,13 @@ public class ReportGUI {
                 else if ( painType.getSelectedCheckbox().getLabel().equals("Drowsiness")) {
                     report = new Drowsiness(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
-                else if ( painType.getSelectedCheckbox().getLabel().equals("Mental Health Condition") ) {
+                else {
                     report = new MentalHealth(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
                 
                 patient.addRep(report);
                 personHandler.addPerson(patient);
-                personHandler.writeReportRecord( patient.getID() );
+                personHandler.writeReportRecord( patient );
                 clearText();
             }
         } );
@@ -98,13 +97,13 @@ public class ReportGUI {
         tf1.setBounds(175, 40, 150, 30);
         lbl2.setBounds(20, 75, 40, 30);
         tf2.setBounds(175, 75, 150, 30);
-        lbl3.setBounds(20, 110, 100, 30);
+        lbl3.setBounds(20, 110, 120, 30);
         tf3.setBounds(175, 110, 150, 30);
         lbl4.setBounds(20, 145, 120, 30);
         typePain1.setBounds(175, 145, 60, 30);
         typePain2.setBounds(240, 145, 100, 30);
         typePain3.setBounds(345, 145, 190, 30);
-        lbl5.setBounds(20, 180, 150, 30);
+        lbl5.setBounds(20, 180, 500, 30);
         lblPainScale.setBounds(350, 40, 200, 30);
         lblPainScale1.setBounds(350, 75, 200, 30);
         lblPainScale3.setBounds(350, 105, 400, 30);
