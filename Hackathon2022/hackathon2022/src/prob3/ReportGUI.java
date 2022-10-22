@@ -124,8 +124,10 @@ public class ReportGUI {
         tf1.setText("");
         tf2.setText("");
         tf3.setText("");
-        tf4.setText("");
         txaMessage.setText("");
+        typePain1.setState(false);
+        typePain2.setState(false);
+        typePain3.setState(false);
     }
 
     public static void main ( String[] args ) {
