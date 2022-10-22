@@ -1,3 +1,5 @@
+package prob3;
+
 import java.awt.event.*;
 import java.awt.TextField; 
 import java.awt.Frame;
@@ -8,8 +10,10 @@ import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.TextArea;
 
+
 public class ReportGUI {
     
+
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
     Label lbl1, lbl2, lbl3, lbl4, lbl5;
@@ -41,7 +45,8 @@ public class ReportGUI {
 
         submitButton.addActionListener( new ActionListener() {
             public void actionPerformed( ActionEvent ae ) {
-                
+                Person patient = new Person(tf1.getText(), Integer.parseInt(tf2.getText()));
+                Report report = new Pain(Integer.parseInt(null), txaMessage.getText() );
             }
         } );
         frame.setLayout( null );
