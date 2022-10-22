@@ -13,7 +13,7 @@ public class PersonHandler{
 
     public ArrayList<Report> getReports(int ID){
         Person p = pMap.get(ID);
-        ArrayList retList = new ArrayList<Report>(p.getAllReports());
+        ArrayList<Report> retList = new ArrayList<Report>(p.getAllReports());
         return retList;
     }
 }

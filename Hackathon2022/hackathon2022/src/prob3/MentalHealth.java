@@ -1,11 +1,11 @@
 package prob3;
 
-public class mentalHealth extends Report{
+public class MentalHealth extends Report{
 
 
-	public mentalHealth (int scale, String description){
+	public MentalHealth (int scale, String description){
 		super(scale, description);
-}
+	}
 
 	@Override
 	public String toString() {
