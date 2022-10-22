@@ -11,15 +11,7 @@ public class PersonHandler{
     public PersonHandler(){}
 
     public void addPerson(Person p) {
-        Set<Integer> keys = pMap.keySet();
-        for( Integer key : keys ) {
-            if( p.getID() == key ) {
-                continue;
-            }
-            else {
-                pMap.put(p.getID(),p);
-            }
-        }
+        pMap.put(p.getID(),p);
     }
 
     public Person getPerson( int id ) {
@@ -32,8 +24,9 @@ public class PersonHandler{
         return p.getAllReports();
     }
 
-    protected void writeReportRecord(int ID){
-        Person p = pMap.get(ID);
+    protected void writeReportRecord( Person p){
+        //Person p = pMap.get(ID);
+        int ID = p.getID();
         ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
         File outFile = new File(fileName);
