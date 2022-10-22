@@ -2,11 +2,7 @@ package prob3;
 
 import java.util.*;
 import java.io.File;  
-import java.io.PrintWriter;
-import java.io.FileNotFoundException;  
-import java.util.Scanner;  
-import java.util.regex.Matcher;  
-import java.util.regex.Pattern;    
+import java.io.PrintWriter;   
 import java.io.IOException;  
 
 public class PersonHandler{
@@ -25,7 +21,7 @@ public class PersonHandler{
         return retList;
     }
 
-    private File writeReportRecord(int ID){
+    private void writeReportRecord(int ID){
         Person p = pMap.get(ID);
         ArrayList<Report> reports = getReports(ID);
 		String fileName = "PatientID:" + ID + "Report.txt";
@@ -39,14 +35,9 @@ public class PersonHandler{
                 writer.print(reports.get(i) + "\n");
             }
             writer.close();
-            	
+
         }catch (IOException ioe) {
 			System.out.println("Problem creating file or writing");
-
 		}
-        return outFile;
 	}
-
-    
-
 }
