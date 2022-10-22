@@ -28,11 +28,19 @@ public class PersonHandler{
         File outFile = new File(fileName);
 		try{
 			PrintWriter writer = new PrintWriter(outFile);
-            writer.print("Name\tAge\tID\nReports:\n");
-            writer.print(p.getName() + "\t" + p.getAge() + "\t" + ID);
-            writer.print("\nReports:\n");
+            writer.print("ReportType\tScale\n");
 			for(int i = 0; i < reports.size(); i++){
-                writer.print(reports.get(i) + "\n");
+                Report r = reports.get(i);
+                if(r instanceof Pain){
+                    writer.print("Pain\t");
+                }
+                else if(r instanceof Drowsiness){
+                    writer.print("Drowsiness\t");
+                }
+                else if(r instanceof mentalHealth){
+                    writer.print("Mental Health\t");
+                }
+                writer.print(r.getScale() + "\n");                
             }
             writer.close();
 
