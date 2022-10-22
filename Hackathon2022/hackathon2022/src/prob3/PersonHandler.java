@@ -33,13 +33,13 @@ public class PersonHandler{
 		try{
 			PrintWriter writer = new PrintWriter(outFile);
             writer.print("Name\tAge\tID\nReports:\n");
+            writer.print(p.getName() + "\t" + p.getAge() + "\t" + ID);
+            writer.print("\nReports:\n");
 			for(int i = 0; i < reports.size(); i++){
                 writer.print(reports.get(i) + "\n");
             }
-
             writer.close();
-		
-
+            	
         }catch (IOException ioe) {
 			System.out.println("Problem creating file or writing");
 
