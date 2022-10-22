@@ -12,7 +12,7 @@ import java.awt.TextArea;
 
 public class ReportGUI {
     
-    PersonHandler personHandler;
+    PersonHandler personHandler = new PersonHandler();
     TextField tf1, tf2, tf3, tf4;
     TextArea txaMessage;
     Label lbl1, lbl2, lbl3, lbl4, lbl5;
@@ -43,10 +43,24 @@ public class ReportGUI {
 
         submitButton.addActionListener( new ActionListener() {
             public void actionPerformed( ActionEvent ae ) {
+                Report report;
                 Person patient = new Person(tf1.getText(), Integer.parseInt(tf2.getText()));
-                Report report = new Pain(Integer.parseInt(null), txaMessage.getText() );
+                
+                if( painType.getSelectedCheckbox().getLabel().equals("Pain")) {
+                    report = new Pain(Integer.parseInt(tf3.getText()), txaMessage.getText() );
+                } 
+                else if ( painType.getSelectedCheckbox().getLabel().equals("Drowsiness")) {
+                    report = new Drowsiness(Integer.parseInt(tf3.getText()), txaMessage.getText() );
+                }
+                else if ( painType.getSelectedCheckbox().getLabel().equals("Mental Health Condition") ) {
+                    report = new MentalHealth(Integer.parseInt(tf3.getText()), txaMessage.getText() );
+                }
+                
+                patient.addRep(report);
+                personHandler.addPerson(patient);
             }
         } );
+
         frame.setLayout( null );
         
         lbl1.setBounds(20, 40, 40, 30);
