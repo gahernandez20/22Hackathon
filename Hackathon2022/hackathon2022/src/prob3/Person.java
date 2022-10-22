@@ -45,8 +45,8 @@ public class Person {
 		reps.add(rep);
 	}
 
-	public Report getReport(){
-		
+	public ArrayList<Report> getAllReports(){
+		return reps;
 	}
 
 	public static void main(String[] args){
