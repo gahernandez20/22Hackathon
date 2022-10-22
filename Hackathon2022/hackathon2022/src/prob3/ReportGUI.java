@@ -22,8 +22,8 @@ public class ReportGUI {
     Frame frame;
 
     public ReportGUI () {
-        frame = new Frame("Report Program");
         
+        frame = new Frame("Report Program");
         tf1 = new TextField(20);
         tf2 = new TextField(20);
         tf3 = new TextField();
@@ -38,14 +38,31 @@ public class ReportGUI {
         typePain2 = new Checkbox("Drowiness", false, painType);
         typePain3 = new Checkbox("Mental Health Condition", false, painType);
         submitButton = new Button("Submit Report");
-
         txaMessage = new TextArea();
+        frame.setLayout( null );
 
+        addButtonListener();
+        createPositionsForComponents();
+        addComponentsToGUI();
+        
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            } 
+        } );
+        
+        frame.setSize(600, 400);
+        frame.setVisible(true);
+    }
+
+    //Function that adds an eventhandler for the "submit button" that will create Person object and
+    //  a Report object based on info entered in GUI text boxes
+    private void addButtonListener() {
         submitButton.addActionListener( new ActionListener() {
             public void actionPerformed( ActionEvent ae ) {
-                Report report;
+                Report report = null;
                 Person patient = new Person(tf1.getText(), Integer.parseInt(tf2.getText()));
-                
+                /* 
                 if( painType.getSelectedCheckbox().getLabel().equals("Pain")) {
                     report = new Pain(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 } 
@@ -55,14 +72,17 @@ public class ReportGUI {
                 else if ( painType.getSelectedCheckbox().getLabel().equals("Mental Health Condition") ) {
                     report = new MentalHealth(Integer.parseInt(tf3.getText()), txaMessage.getText() );
                 }
-                
+                */
                 patient.addRep(report);
                 personHandler.addPerson(patient);
             }
         } );
 
-        frame.setLayout( null );
-        
+    }
+
+    //Method that will size the components of GUI and set their positions
+    private void createPositionsForComponents() {
+
         lbl1.setBounds(20, 40, 40, 30);
         tf1.setBounds(175, 40, 150, 30);
         lbl2.setBounds(20, 75, 40, 30);
@@ -75,8 +95,12 @@ public class ReportGUI {
         typePain3.setBounds(345, 145, 190, 30);
         lbl5.setBounds(20, 180, 150, 30);
         submitButton.setBounds(225, 365, 120, 30);
-
         txaMessage.setBounds(20, 215, 500, 150);
+
+    }
+
+    //Method that will add all components to GUI 
+    private void addComponentsToGUI() {
 
         frame.add(lbl1);
         frame.add(tf1);
@@ -91,15 +115,7 @@ public class ReportGUI {
         frame.add(lbl5);
         frame.add(txaMessage);
         frame.add(submitButton);
-        
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent we) {
-                System.exit(0);
-            } 
-        } );
-        
-        frame.setSize(600, 400);
-        frame.setVisible(true);
+
     }
 
     public static void main ( String[] args ) {
